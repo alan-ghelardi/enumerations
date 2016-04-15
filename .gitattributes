@@ -1,0 +1,31 @@
+* text=auto
+
+# source code files
+*.js text
+*.coffee text
+*.json text
+*.sh text
+*.bat text
+*.cmd text
+
+# git config
+.gitattributes text
+.gitignore text
+.gitconfig text
+
+.editorconfig text
+
+# Documentation
+*.md text
+LICENSE text
+AUTHORS text
+
+#
+## These files are binary and should be left untouched
+#
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
