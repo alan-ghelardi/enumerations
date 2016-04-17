@@ -17,6 +17,10 @@ module.exports = (grunt) ->
       build: 'gruntfile.coffee'
 
     coffee:
+      options:
+        bare: true
+        sourceMap: true
+        sourceMapDir: './target/.sourcemap'
       main:
         expand: true
         cwd: 'src'
