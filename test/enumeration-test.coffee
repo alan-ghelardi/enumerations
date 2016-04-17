@@ -2,6 +2,7 @@
 chai = require 'chai'
 CardinalDirection = require './cardinal-direction'
 PrimaryColor = require './primary-color'
+UnitializedEnum = require './unitialized-enum'
 
 chai.should()
 expect = chai.expect
@@ -12,6 +13,16 @@ expect = chai.expect
 describe 'Enum', ->
 
   describe '.values(constants...)', ->
+
+    it 'throws an AssertionError when the method is called over an initialized enum', ->
+      expect( ->
+        PrimaryColor.values 'GREEN', 'VIOLET')
+      .to .throw AssertionError, 'The constants of enum PrimaryColor has already been created'
+
+    it 'throws an AssertionError when the parameter constants is omited', ->
+      expect( ->
+        UnitializedEnum.values())
+      .to .throw AssertionError, 'The parameter `name` is required for creating the enum UnitializedEnum'
 
     it 'creates all declared constant values', ->
       expect(PrimaryColor) .to .have .property 'BLUE'
@@ -98,3 +109,8 @@ describe 'Enum', ->
       0 .should .be .equal BLUE.compareTo(BLUE)
       1 .should .be .equal RED.compareTo(BLUE)
       (-1) .should .be .equal RED.compareTo(YELLOW)
+
+  describe '#toString()', ->
+
+    it 'by default, returns the constant\'s name', ->
+      'WEST' .should .be .equal WEST.toString()

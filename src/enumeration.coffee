@@ -31,8 +31,7 @@ class Enum
 
   @values: (constants...) ->
     assert not Object.isFrozen(this), "The constants of enum #{@name} has already been created "
-    assert isArray(constants), "An array of constants must be provided for creating the enum #{@name}"
-
+    assert constants.length, "The parameter `name` is required for creating the enum #{@name}"
     enumerationify this, constants
     null
 
