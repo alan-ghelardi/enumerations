@@ -1,5 +1,5 @@
 assert = require 'assert'
-{isArray} = require 'util'
+{isArray, isString} = require 'util'
 enumerationify = require './enumerationify'
 
 module.exports =
@@ -28,7 +28,7 @@ class Enum
       -1
 
   toString: -> @name
-  
+
   @values: (constants...) ->
     assert not Object.isFrozen(this), "The constants of enum #{@name} has already been created "
     assert isArray(constants), "An array of constants must be provided for creating the enum #{@name}"
@@ -36,7 +36,15 @@ class Enum
     enumerationify this, constants
     null
 
+  @valueOf: (name) ->
+    assert isString(name), 'Parameter `name` must be a string'
+    result = (value for key, value of this when value.isConstantOf? and value.isConstantOf(this) and key is name)
+
+    assert result.length, "No such constant `#{name}`"
+
+    result[0]
+
   @all: ->
     constants = (value for key, value of this when value.isConstantOf? and value.isConstantOf(this))
     constants.sort (a, b) -> a.compareTo(b)
-    
+

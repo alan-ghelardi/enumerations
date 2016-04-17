@@ -17,7 +17,7 @@ describe 'Enum', ->
       expect(PrimaryColor) .to .have .property 'BLUE'
       expect(PrimaryColor) .to .have .property 'RED'
       expect(PrimaryColor) .to .have .property 'YELLOW'
-      
+
     it 'freezes the enum class making it immutable', ->
       expect(CardinalDirection) .to .be .frozen
 
@@ -25,6 +25,21 @@ describe 'Enum', ->
       expect(BLUE) .to .be .frozen
       expect(RED) .to .be .frozen
       expect(YELLOW) .to .be .frozen
+
+  describe '.valueOf(name)', ->
+
+    it 'throws an AssertionError when the name is not a string', ->
+      expect( ->
+        CardinalDirection.valueOf())
+      .to .throw AssertionError, 'Parameter `name` must be a string'
+
+    it 'returns the constant that corresponds to specified name', ->
+      YELLOW .should .be .equal PrimaryColor.valueOf('YELLOW')
+
+    it 'throws an AssertionError when the name does not matches any existing constant', ->
+      expect( ->
+        PrimaryColor.valueOf('GREEN'))
+      .to .throw AssertionError, 'No such constant `GREEN`'
 
   describe '.all()', ->
 
