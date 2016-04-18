@@ -2,10 +2,11 @@
 module.exports = (grunt) ->
 
   grunt.initConfig
-  
+
     pkg: grunt.file.readJSON 'package.json'
 
     clean:
+      target: 'target'
       main: 'target/src'
       test: 'target/test'
 
@@ -50,7 +51,7 @@ module.exports = (grunt) ->
   require('load-grunt-tasks')(grunt)
 
   grunt.registerTask 'default', [ 'validate', 'compile' ]
-  
+
   grunt.registerTask 'validate', [ 'coffeelint:build', 'coffeelint:main', 'coffeelint:test' ]
 
   grunt.registerTask 'compile', [ 'clean:main', 'coffee:main' ]
@@ -58,3 +59,5 @@ module.exports = (grunt) ->
   grunt.registerTask 'test-compile', [ 'clean:test', 'coffee:test' ]
 
   grunt.registerTask 'test', [ 'validate', 'compile', 'test-compile', 'mochaTest' ]
+
+  grunt.registerTask 'release', [ 'test', 'copy:dist', 'clean:target' ]
