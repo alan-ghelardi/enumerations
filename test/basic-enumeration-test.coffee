@@ -1,8 +1,8 @@
 {AssertionError} = require 'assert'
 chai = require 'chai'
-CardinalDirection = require './cardinal-direction'
-PrimaryColor = require './primary-color'
-UnitializedEnum = require './unitialized-enum'
+Enum = require '../src/enumeration'
+CardinalDirection = require '../examples/cardinal-direction'
+PrimaryColor = require '../examples/primary-color'
 
 chai.should()
 expect = chai.expect
@@ -20,6 +20,8 @@ describe 'Enum', ->
       .to .throw AssertionError, 'The constants of enum PrimaryColor has already been created'
 
     it 'throws an AssertionError when the parameter constants is omited', ->
+      class UnitializedEnum extends Enum
+
       expect( ->
         UnitializedEnum.values())
       .to .throw AssertionError, 'The parameter `name` is required for creating the enum UnitializedEnum'
