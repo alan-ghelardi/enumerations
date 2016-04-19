@@ -1,6 +1,6 @@
 {
   "name": "enumeration",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "CoffeeScript implementation of the enumeration design pattern",
   "main": "./dist/enumeration.js",
   "directories": {
