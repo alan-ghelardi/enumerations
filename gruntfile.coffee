@@ -13,9 +13,10 @@ module.exports = (grunt) ->
     coffeelint:
       options:
         configFile: 'coffeelint.json'
+      build: 'gruntfile.coffee'
       main: 'src/**/*.coffee'
       test: 'test/**/*.coffee'
-      build: 'gruntfile.coffee'
+      examples: 'examples/*.coffee',
 
     coffee:
       options:
@@ -36,6 +37,13 @@ module.exports = (grunt) ->
         dest: 'target/test'
         ext: '.js'
 
+      examples:
+        expand: true
+        cwd: 'examples'
+        src: '**/*.coffee'
+        dest: 'target/examples',
+        ext: '.js'
+
     mochaTest:
       options:
         reporter: 'spec'
@@ -52,11 +60,11 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'default', [ 'validate', 'compile' ]
 
-  grunt.registerTask 'validate', [ 'coffeelint:build', 'coffeelint:main', 'coffeelint:test' ]
+  grunt.registerTask 'validate', [ 'coffeelint:build', 'coffeelint:main', 'coffeelint:test', 'coffeelint:examples' ]
 
   grunt.registerTask 'compile', [ 'clean:main', 'coffee:main' ]
 
-  grunt.registerTask 'test-compile', [ 'clean:test', 'coffee:test' ]
+  grunt.registerTask 'test-compile', [ 'clean:test', 'coffee:test', 'coffee:examples' ]
 
   grunt.registerTask 'test', [ 'validate', 'compile', 'test-compile', 'mochaTest' ]
 
