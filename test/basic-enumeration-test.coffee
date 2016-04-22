@@ -84,6 +84,11 @@ describe 'Enum', ->
       1 .should .be .equal RED.ordinal
       2 .should .be .equal YELLOW.ordinal
 
+  describe '._', ->
+
+    it 'is an alias for #toString()', ->
+      'BLUE' .should .be .equal BLUE._
+
   describe '#isConstantOf(anEnum)', ->
 
     it 'returns true', ->

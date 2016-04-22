@@ -24,6 +24,7 @@ addNewConstantTo = (enumClass, descriptor, ordinal) ->
     copyFields(instance, descriptor[name])
 
   instance.name = name
+  instance._ = instance?.toString() or instance.name
   Object.freeze(instance)
   enumClass[name] = instance
 
