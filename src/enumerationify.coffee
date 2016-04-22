@@ -1,7 +1,7 @@
 assert = require 'assert'
 {isString} = require 'util'
 
-nonOverridableFields = [ 'name', 'ordinal', 'type' ]
+nonOverridableFields = [ '_', 'name', 'ordinal', 'type' ]
 
 module.exports = (enumClass, constants) ->
   constants.forEach (descriptor, ordinal) ->

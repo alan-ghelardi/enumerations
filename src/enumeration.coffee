@@ -37,7 +37,7 @@ class Enum
 
   @valueOf: (name) ->
     assert isString(name), 'Parameter `name` must be a string'
-    result = (value for key, value of this when value.isConstantOf? and value.isConstantOf(this) and key is name)
+    result = (value for key, value of this when value._ is name)
 
     assert result.length, "No such constant `#{name}`"
 
