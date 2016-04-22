@@ -37,3 +37,14 @@ describe 'Enum', ->
         expect(SUBTRACTION.apply(a, b)) .to .be .equal 4
         expect(MULTIPLICATION.apply(a, b)) .to .be .equal 12
         expect(DIVISION.apply(a, b)) .to .be .equal 3
+
+      it 'doesn\'t allow that the fields name, type and ordinal are overriden', ->
+        class AnotherInvalidEnum extends Enum
+
+        AnotherInvalidEnum.values {
+          FOO: name: 'BAR', type: 'AnythingElse', ordinal: 1
+        }
+
+        expect(AnotherInvalidEnum.FOO.name) .to .be .equal 'FOO'
+        expect(AnotherInvalidEnum.FOO.type) .to .be .equal 'AnotherInvalidEnum'
+        expect(AnotherInvalidEnum.FOO.ordinal) .to .be .equal 0
