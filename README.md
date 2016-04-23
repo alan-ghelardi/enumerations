@@ -4,9 +4,9 @@ A CoffeeScript implementation of the enumeration design pattern because... well,
 
 This lightweight library takes the Java implementation of enums as an inspiration for leveraging fully functional enumerations, with support for customized properties and methods, immutability, error checking, etc.
 
-## Installing
+## Installation
 
-```
+```shell
 npm install enumeration
 ```
 
@@ -18,7 +18,7 @@ After creating a class that extends from the Enum base class and calling the met
 
 Furthermore, each constant value, as well the own enum class, become immutable; is no longer possible adding, modifying or removing properties.
 
-```
+```coffeescript
 Enum = require 'enumeration'
 
 class PrimaryCollor extends Enum
@@ -51,3 +51,13 @@ YELLOW.toString() # "YELLOW" - by default, same as name
 BLUE.isConstantOf(PrimaryColor) # true
 
 RED.isSameTypeAs(YELLOW) # true
+```
+
+##Examples
+
+Check out the `examples/`folder for more details. The `calculator.coffee` file demonstrates a simple use case of the enumeration strategy pattern implemented through the `arithmetic-operation` file. Additionally, take a look on the unit tests at `test/` folder. They contain very clear (hopefully) examples of the capabilities of this library.
+
+## License
+
+Copyright (c) 2016 Alan Ghelardi. 
+Licensed under the MIT license.
