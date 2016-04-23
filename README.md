@@ -55,9 +55,10 @@ RED.isSameTypeAs(YELLOW) # true
 
 ##Examples
 
-Check out the `examples/`folder for more details. The `calculator.coffee` file demonstrates a simple use case of the enumeration strategy pattern implemented through the `arithmetic-operation` file. Additionally, take a look on the unit tests at `test/` folder. They contain very clear (hopefully) examples of the capabilities of this library.
+Check out the `examples/`folder for more details. The `calculator.coffee` file demonstrates a simple use case of the enumeration strategy pattern implemented through the `arithmetic-operation.coffee` file. Additionally, take a look on the unit tests at `test/` folder. They contain very clear (hopefully) examples of the capabilities of this library.
 
 ## License
 
-Copyright (c) 2016 Alan Ghelardi. 
+Copyright (c) 2016 Alan Ghelardi.
+
 Licensed under the MIT license.
