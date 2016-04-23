@@ -19,7 +19,7 @@ After creating a class that extends from the Enum base class and calling the met
 Furthermore, each constant value, as well the own enum class, become immutable; is no longer possible adding, modifying or removing properties.
 
 ```coffeescript
-Enum = require 'enumeration'
+Enum = require 'enumerations'
 
 class PrimaryCollor extends Enum
 
