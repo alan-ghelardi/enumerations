@@ -1,5 +1,5 @@
 {AssertionError} = require 'assert'
-Enum = require '../src/enumeration'
+Enum = require '../src/enumerations'
 
 module.exports =
 class ArithmeticOperation extends Enum

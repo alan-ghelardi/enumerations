@@ -1,6 +1,6 @@
 {AssertionError} = require 'assert'
 {expect} = require 'chai'
-Enum = require '../src/enumeration'
+Enum = require '../src/enumerations'
 ArithmeticOperation = require '../examples/arithmetic-operation'
 
 {SUM, SUBTRACTION, MULTIPLICATION, DIVISION} = ArithmeticOperation

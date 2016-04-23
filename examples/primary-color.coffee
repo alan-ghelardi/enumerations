@@ -1,4 +1,4 @@
-Enum = require '../src/enumeration'
+Enum = require '../src/enumerations'
 
 module.exports =
 class PrimaryColor extends Enum

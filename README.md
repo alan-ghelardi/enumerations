@@ -1,4 +1,4 @@
-# Enumeration
+# Enumerations
 
 A CoffeeScript implementation of the enumeration design pattern because... well, because developing your own implementation of the enumeration design pattern in CoffeeScript is very funny.
 
@@ -7,7 +7,7 @@ This lightweight library takes the Java implementation of enums as an inspiratio
 ## Installation
 
 ```shell
-npm install enumeration
+npm install enumerations
 ```
 
 ## Usage

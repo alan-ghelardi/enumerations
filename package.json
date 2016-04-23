@@ -1,8 +1,8 @@
 {
-  "name": "enumeration",
+  "name": "enumerations",
   "version": "0.9.0",
   "description": "CoffeeScript implementation of the enumeration design pattern",
-  "main": "./dist/enumeration.js",
+  "main": "./dist/enumerations.js",
   "directories": {
     "test": "test"
   },
@@ -11,10 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alan-ghelardi/enumeration.git"
+    "url": "git+https://github.com/alan-ghelardi/enumerations.git"
   },
   "keywords": [
-    "Enum"
+    "Enum",
+    "enumeration",
+    "utility"
   ],
   "author": "Alan Ghelardi",
   "license": "MIT",

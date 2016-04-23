@@ -1,6 +1,6 @@
 {AssertionError} = require 'assert'
 chai = require 'chai'
-Enum = require '../src/enumeration'
+Enum = require '../src/enumerations'
 CardinalDirection = require '../examples/cardinal-direction'
 PrimaryColor = require '../examples/primary-color'
 
