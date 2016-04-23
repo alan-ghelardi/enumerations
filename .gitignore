@@ -1,9 +1,7 @@
 .project
 .settings
-.vs
 logs
 *.log
-*.njsproj
 npm-debug.log*
 node_modules
 .npm
