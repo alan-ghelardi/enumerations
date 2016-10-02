@@ -1,39 +1,29 @@
 {
   "name": "enumerations",
-  "version": "0.10.2",
-  "description": "CoffeeScript implementation of the enumeration design pattern",
-  "main": "./dist/enumerations.js",
-  "directories": {
-    "test": "test"
-  },
+  "version": "1.0.0",
+  "description": "EcmaScript 2015 implementation of the enumeration design pattern.",
+  "main": "lib/enum.js",
   "scripts": {
-    "test": "grunt test"
+    "build": "babel src -d lib",
+    "lint" : "eslint src/**/*.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alan-ghelardi/enumerations.git"
   },
   "keywords": [
-    "Enum",
+    "enum",
     "enumeration",
     "utility"
   ],
-  "author": "Alan Ghelardi",
+  "author": "Alan Ghelardi <alan.ghelardi@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alan-ghelardi/enumeration/issues"
+    "url": "https://github.com/alan-ghelardi/enumerations/issues"
   },
-  "homepage": "https://github.com/alan-ghelardi/enumeration#readme",
+  "homepage": "https://github.com/alan-ghelardi/enumerations#readme",
   "devDependencies": {
-    "chai": "^3.4.1",
-    "grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13",
-    "grunt-coffeelint": "0.0.13",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-coffee": "^0.13.0",
-    "grunt-contrib-copy": "^0.8.2",
-    "grunt-mocha-test": "^0.12.7",
-    "inquirer": "^1.0.2",
-    "load-grunt-tasks": "^3.3.0"
+    "babel-cli": "^6.16.0",
+    "eslint": "^3.7.0"
   }
 }
