@@ -32,7 +32,7 @@ export default class Enum {
   }
 
   static values(...constants) {
-    assert(Object.isFrozen(this), `The constants of enum ${this.name} have already been created`)
+    assert(!Object.isFrozen(this), `The constants of enum ${this.name} have already been created`)
     assert(constants.length, `The parameter \`constants\` is required for creating the enum ${this.name}`)
     enumerationify(this, constants)
   }
@@ -48,5 +48,13 @@ export default class Enum {
 
     assert.fail(`No such constant \`${name}\``)
   }
+
+  static *[Symbol.iterator]() {
+    for (let key in this) {
+      if (this[key].isConstantOf && this[key].isConstantOf(this)) {
+        yield this[key]
+      }
+    }
+  } 
 
 }

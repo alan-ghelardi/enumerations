@@ -25,7 +25,7 @@ describe('Enum', () => {
 
       expect( () => {
         UnitializedEnum.values()
-      }).to .throw(AssertionError, 'The parameter `name` is required for creating the enum UnitializedEnum')
+      }).to .throw(AssertionError, 'The parameter `constants` is required for creating the enum UnitializedEnum')
     })
 
     it('creates all declared constant values', () => {
