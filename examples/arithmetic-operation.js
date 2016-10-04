@@ -1,5 +1,5 @@
 import {AssertionError} from 'assert'
-import Enum from '../src/enumerations'
+import Enum from '../src/enum'
 
 export default class ArithmeticOperation extends Enum {
   

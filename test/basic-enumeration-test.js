@@ -1,6 +1,6 @@
-import {AssertionError} from 'assert'
 import chai from 'chai'
-import Enum from '../src/enumerations'
+import {AssertionError} from 'assert'
+import Enum from '../src/enum'
 import CardinalDirection from '../examples/cardinal-direction'
 import PrimaryColor from '../examples/primary-color'
 

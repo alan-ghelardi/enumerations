@@ -1,6 +1,6 @@
-import {AssertionError} from 'assert'
 import {expect} from 'chai'
-import Enum from '../src/enumerations'
+import {AssertionError} from 'assert'
+import Enum from '../src/enum'
 import ArithmeticOperation from '../examples/arithmetic-operation'
 
 const {SUM, SUBTRACTION, MULTIPLICATION, DIVISION} = ArithmeticOperation

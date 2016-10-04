@@ -1,4 +1,4 @@
-import Enum from '../src/enumerations'
+import Enum from '../src/enum'
 
 export default class PrimaryColor extends Enum {
 }
