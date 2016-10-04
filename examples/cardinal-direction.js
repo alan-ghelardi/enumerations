@@ -1,6 +1,6 @@
-Enum = require '../src/enumerations'
+import Enum from '../src/enumerations'
 
-module.exports =
-class CardinalDirection extends Enum
+export default class CardinalDirection extends Enum {
+}
 
-CardinalDirection.values 'NORTH', 'EAST', 'SOUTH', 'WEST'
+CardinalDirection.values('NORTH', 'EAST', 'SOUTH', 'WEST')

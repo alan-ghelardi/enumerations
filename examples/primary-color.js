@@ -1,6 +1,6 @@
-Enum = require '../src/enumerations'
+import Enum from '../src/enumerations'
 
-module.exports =
-class PrimaryColor extends Enum
+export default class PrimaryColor extends Enum {
+}
 
-PrimaryColor.values 'BLUE', 'RED', 'YELLOW'
+PrimaryColor.values('BLUE', 'RED', 'YELLOW')

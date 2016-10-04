@@ -1,36 +1,45 @@
-{AssertionError} = require 'assert'
-Enum = require '../src/enumerations'
+import {AssertionError} from 'assert'
+import Enum from '../src/enumerations'
 
-module.exports =
-class ArithmeticOperation extends Enum
+export default class ArithmeticOperation extends Enum {
+  
+  /* eslint no-unused-vars: "off" */
+  apply(a, b) {
+    throw new AssertionError('Not implemented yet')
+  }
 
-  apply: (a, b) -> throw new AssertionError('Not implemented yet')
+  toString() {
+    return this.operator
+  }
+}
 
-  toString: -> @operator
+ArithmeticOperation.values({
+  SUM: {
 
-ArithmeticOperation.values {
-  SUM:
+    operator: '+',
 
-    operator: '+'
-
-    apply: (a, b) -> a + b
+    apply: (a, b) => a + b
+  }
 }, {
-  SUBTRACTION:
+  SUBTRACTION: {
 
-    operator: '-'
+    operator: '-',
 
-    apply: (a, b) -> a - b
+    apply: (a, b) => a - b
+  }
 }, {
-  MULTIPLICATION:
+  MULTIPLICATION: {
 
-    operator: '*'
+    operator: '*',
 
-    apply: (a, b) -> a * b
+    apply: (a, b) => a * b
+  }
 }, {
-  DIVISION:
+  DIVISION: {
 
     operator: '/',
 
-    apply: (a, b) -> a / b
-}
+    apply: (a, b) => a / b
+  }
+})
 
