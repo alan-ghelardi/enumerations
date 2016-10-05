@@ -7,7 +7,8 @@
     "build": "npm run lint&&npm run compile",
     "compile": "babel src -d lib",
     "lint": "eslint src/**/*.js test/**/*.js examples/**/*.js",
-    "test": "mocha --compilers js:babel-register --reporter spec test"
+    "test": "mocha --compilers js:babel-register --reporter spec test",
+    "test-cov" : "nyc mocha test"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "chai": "^3.5.0",
     "eslint": "^3.7.0",
     "inquirer": "^1.2.1",
-    "mocha": "^3.1.0"
+    "mocha": "^3.1.0",
+    "nyc": "^8.3.0"
   }
 }
