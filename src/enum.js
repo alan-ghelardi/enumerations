@@ -1,5 +1,5 @@
 import assert from 'assert'
-import enumerationify from './enumerationify'
+import makeEnum from './make-enum'
 import {isString} from 'util'
 
 export default class Enum {
@@ -34,7 +34,7 @@ export default class Enum {
   static values(...constants) {
     assert(!Object.isFrozen(this), `The constants of enum ${this.name} have already been created`)
     assert(constants.length, `The parameter \`constants\` is required for creating the enum ${this.name}`)
-    enumerationify(this, constants)
+    makeEnum(this, constants)
   }
 
   static valueOf(name) {
