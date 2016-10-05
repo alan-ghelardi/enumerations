@@ -2,7 +2,6 @@
 
 # source code files
 *.js text
-*.coffee text
 *.json text
 *.sh text
 *.bat text
@@ -13,7 +12,10 @@
 .gitignore text
 .gitconfig text
 
+# Other configuration files.
+.babelrc text
 .editorconfig text
+.nycrc text
 
 # Documentation
 *.md text
