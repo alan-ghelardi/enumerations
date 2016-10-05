@@ -1,7 +1,0 @@
-.editorconfig
-.gitattributes
-.npmignore
-.project
-.settings
-*.coffee
-coffeelint.json
