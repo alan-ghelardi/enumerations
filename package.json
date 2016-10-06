@@ -7,11 +7,11 @@
     "node" : ">=6.0.0"
   },
   "scripts": {
-    "build": "npm run lint&&npm run compile",
+    "build": "npm run lint&npm test&&npm run compile",
     "compile": "babel src -d lib",
     "lint": "eslint src/**/*.js test/**/*.js examples/**/*.js",
-    "test": "mocha --compilers js:babel-register --reporter spec test",
-    "test-cov" : "nyc mocha test"
+    "test": "npm run lint&mocha --compilers js:babel-register --reporter spec test",
+    "test-ci" : "npm run lint&nyc mocha test"
   },
   "repository": {
     "type": "git",
