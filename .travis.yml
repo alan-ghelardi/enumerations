@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- '6'
+script:
+- npm run build
+- npm run test-ci
+
+deploy:
+  provider: npm
+  email: alan.ghelardi@gmail.com
+  api_key:
+    secure: Vj0rByHNKvJVRAD9tNpr/vm2COvEZJrCZPdEa2jlPq+SxFih0fbsZkWP1DXyd8xW72yWoXqYMpB9/Wuk5rxZdyXUp494wLDeTZVC0ZR7y+l4e9KqMJSlVDaEllCZDoag/kEI6vXTroB7VJOhOa/G5AeHjjwtlxf0G55uB/SmmNju6LDEjwyXADsKS6H4ROWDdjSNHEryDUJGmTlVc11jav/A8JeoqogJR1H5e8lerV+gN2BSVhZ1yr/hOhanzMDppUQ1PPl78+uzRRxMYzCgcD2Y+bwsvf5HrDSEsZnvfX7IwzwJ4SckQnwF6GURdfbZsq2zW2/hj3cuvQPCxg3D2o6mj5mfvRNyM3w6gYo1e+0yrWOk/KhhBdm/axHfHUGbcytrDdjHrgpNV/HfiqExm3TvMS+HTPQKuT0JBDfm1qQ53lfDethxq7rt9EXhas5I9oHiHT7G96sIMaYyo8/d7O657eg89Bfuy498yq0HK7IZNub5OwmSXVyPyNPhp0tDHhunurrvF5TsI/j2TeKS5U6dLbEMkdKdP7ObxOkG+Zj/7W30vFTemt2cCzgnrMGDvRQD/OeQn70FaRzmn2jkO9r9ageoL5SFz8MmxffgxI/K7iCFmGrgf+zMfHmKkNerAW+NCskzTbpG/FO/JBnEBCKgXUIshkdy3Ze+onfruqc=
+  on:
+    tags: true
+    repo: alan-ghelardi/enumerations
+  skip_cleanup: true
+  
