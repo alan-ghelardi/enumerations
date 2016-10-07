@@ -31,6 +31,9 @@ node_modules
 
 #-------------------------------------------------------------------------------
 
+# Directory generated after the build.
+lib
+
 # IDE related files.
 
 .settings
