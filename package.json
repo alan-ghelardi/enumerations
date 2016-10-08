@@ -1,7 +1,7 @@
 {
   "name": "enumerations",
   "version": "1.0.0",
-  "description": "EcmaScript 2015 implementation of the enumeration design pattern.",
+  "description": "Type-Safe enums in JavaScript with custom properties and methods, immutability support, error checking, etc.",
   "main": "lib/enum.js",
   "engines" : {
     "node" : ">=6.0.0"
