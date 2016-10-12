@@ -96,7 +96,7 @@ Let's imagine a scenario where in a sales system, each employee of a sales chain
 ```js
 import Enum from 'enumerations'
 
-export default class EmployeeType extends Enum {
+class EmployeeType extends Enum {
   computeCommission(amount) {
     return amount * 0.20
   }
