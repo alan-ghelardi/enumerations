@@ -34,7 +34,7 @@ PrimaryColor.values('BLUE', 'RED', 'YELLOW')
 
 ### A More Advanced Example
 
-It's possible to implement the strategy pattern through enums.
+It's possible to implement the strategy design pattern through enums. Let's have a look on a very simple example where the four basic arithmetic operations are modelled as enum constants, each one with its own implementation of a method apply which takes two numbers as parameters:  
 
 ```js
 import {AssertionError} from 'assert'
@@ -87,6 +87,32 @@ const y = 2
 for (let operation of ArithmeticOperation) {
   console.log('%d %s %d = %d', x, operation.operator, y, operation.apply(x, y))
 }
+```
+
+### Overriding a method and calling the super
+
+Let's imagine a scenario where in a sales system, each employee of a sales chain receives a commission of 20% over each sold product. However, for sales supervisors the company offers an additional bonus of $50.00 over the regular commission. This model can be designed in the following way: 
+
+```js
+import Enum from 'enumerations'
+
+export default class EmployeeType extends Enum {
+  computeCommission(amount) {
+    return amount * 0.20
+  }
+}
+
+EmployeeType.values({
+  SALES_SUPERVISOR: {
+    computeCommission(amount) {
+      return super.computeCommission(amount) + 50.00
+    }
+  }
+},
+
+'SHOP_ASSISTANT',
+
+'SALES_PERSON')
 ```
 
 ##Examples
