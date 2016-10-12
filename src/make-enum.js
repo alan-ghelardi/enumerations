@@ -1,31 +1,31 @@
 import assert from 'assert'
-import copyProperties from './copy-properties'
 import {isString} from 'util'
 
 export default (enumClass, constants) => {
-  constants.forEach((descriptor, ordinal) => {
-    addNewConstantTo(enumClass, descriptor, ordinal)
+  constants.forEach((enumBody, ordinal) => {
+    addNewConstantTo(enumClass, enumBody, ordinal)
   })
 
   Object.freeze(enumClass)
 }
 
-const addNewConstantTo = (enumClass, descriptor, ordinal) => {
-  const instance = new enumClass()
-  instance.ordinal = ordinal
-  let name = null
+const addNewConstantTo = (enumClass, enumBody, ordinal) => {
+  let name, constant = {} 
 
-  if (isString(descriptor)) {
-    name = descriptor
+  if (isString(enumBody)) {
+    name = enumBody
   } else {
-    const keys = Object.keys(descriptor)
+    const keys = Object.keys(enumBody)
     assert(keys.length === 1, `For creating the enum ${enumClass.name} you must provide a list of objects in the following format: {constant1: {...}}, {constant2: {...}}, etc.`)
     name = keys[0]
-    copyProperties(descriptor[name], instance)
+    constant = enumBody[name]
   }
 
-  instance.name = name
-  instance._ = instance.toString()
-  Object.freeze(instance)
-  enumClass[name] = instance
+  constant.__proto__ = Object.create(enumClass.prototype)   
+  constant.name = name
+  constant.type = enumClass.name
+  constant.ordinal = ordinal
+  constant._ = constant.toString()
+  Object.freeze(constant)
+  enumClass[name] = constant
 }

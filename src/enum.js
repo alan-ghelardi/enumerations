@@ -5,9 +5,7 @@ import {isString} from 'util'
 export default class Enum {
 
   constructor() {
-    this.type = this.constructor.name
-
-    assert(!Object.isFrozen(this.constructor), `Cannot instantiate the enum ${this.type}`)
+    assert(!Object.isFrozen(this.constructor), `Cannot instantiate the enum ${this.constructor.name}`)
   }
 
   isConstantOf(anEnum) {

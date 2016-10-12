@@ -3,16 +3,18 @@ import chai from 'chai'
 import Enum from '../src/enum'
 import ArithmeticOperation from '../examples/arithmetic-operation'
 import CardinalDirection from '../examples/cardinal-direction'
+import EmployeeType from '../examples/employee-type'
 import PrimaryColor from '../examples/primary-color'
 
 const expect = chai.expect
 
-const {BLUE, RED, YELLOW} = PrimaryColor
 const {SUM, SUBTRACTION, MULTIPLICATION, DIVISION} = ArithmeticOperation
+const {BLUE, RED, YELLOW} = PrimaryColor
+const {SALES_SUPERVISOR, SALES_PERSON, SHOP_ASSISTANT} = EmployeeType
 
 describe('.values(constants...)', () => {
 
-  describe('when is called on an initialized enum', () => {
+  describe('when called on an initialized enum', () => {
 
     it('throws an AssertionError', () => {
       expect( () => {
@@ -101,4 +103,13 @@ describe('.values(constants...)', () => {
     })
   })
   
+  describe('when one wants to override a method and call the super within it', () => {
+
+    it('binds the `super` keyword to the parent enum', () => {
+      570.00 .should .be .equal(SALES_PERSON.computeCommission(2850.00))
+      570.00 .should .be .equal(SHOP_ASSISTANT.computeCommission(2850.00))
+      620.00 .should .be .equal(SALES_SUPERVISOR.computeCommission(2850.00))
+    })
+  })
+
 })
