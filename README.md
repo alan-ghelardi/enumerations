@@ -115,6 +115,10 @@ EmployeeType.values({
 'SALES_PERSON')
 ```
 
+## Documentation
+
+See the [API Docs](docs/enum.md) for a complete reference of the properties and methods inherited by enums.   
+
 ##Examples
 
 Check out the `examples/`folder for more details. Additionally, take a look on the unit tests at `test/` folder. They contain very  comprhensive examples of the capabilities of this library.
