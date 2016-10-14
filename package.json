@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "description": "Type-Safe enums in JavaScript with custom properties and methods, immutability support, error checking, etc.",
   "main": "lib/enum.js",
-  "engines" : {
-    "node" : ">=6.0.0"
+  "engines": {
+    "node": ">=6.0.0"
   },
   "scripts": {
     "build": "npm run lint&npm run compile",
     "lint": "eslint src/**/*.js test/**/*.js examples/**/*.js",
     "compile": "babel src -d lib",
+    "docs": "jsdoc2md -f src/enum.js > docs/enum.md",
     "test": "mocha --compilers js:babel-register --reporter spec test",
-    "test-ci" : "nyc mocha test"
+    "test-ci": "nyc mocha test"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "chai": "^3.5.0",
     "eslint": "^3.7.0",
     "inquirer": "^1.2.1",
+    "jsdoc-to-markdown": "^2.0.0",
     "mocha": "^3.1.0",
     "nyc": "^8.3.0"
   }
