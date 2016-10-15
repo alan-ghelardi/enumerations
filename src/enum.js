@@ -19,8 +19,17 @@ import {isString} from 'util'
  */
 class Enum {
 
+  /**
+   * Enum types may not be instantiated through the new operator. The
+   * constructor guarantees such invariant by throwing an AssertionError
+   * whenever called.
+   * 
+   * @throws {AssertionError}
+   *           Whenever that one uses the new operator with an enum type.
+   */
   constructor() {
-    assert(!Object.isFrozen(this.constructor), `Cannot instantiate the enum ${this.constructor.name}`)
+    const type = this.constructor.name
+    assert.fail(`The type ${type} may not be instantiated`)
   }
 
   /**
