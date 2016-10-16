@@ -1,6 +1,5 @@
 import assert from 'assert'
 import makeEnum from './make-enum'
-import {isString} from 'util'
 
 /**
  * This is the common base class for all enumeration types. Enum constants are
@@ -94,7 +93,7 @@ class Enum {
 
   static values(...constants) {
     assert(!Object.isFrozen(this), `The constants of enum ${this.name} have already been created`)
-    assert(constants.length, `The parameter \`constants\` is required for creating the enum ${this.name}`)
+    assert(constants.length, `The parameter \`constants\` is mandatory for creating the enum ${this.name}`)
     makeEnum(this, constants)
   }
 
@@ -111,7 +110,7 @@ class Enum {
    *           constant that corresponds to the specified name.
    */
   static valueOf(name) {
-    assert(isString(name), 'Parameter `name` must be a string')
+    assert(typeof name === 'string', 'Parameter `name` must be a string')
 
     for (let constant of this) {
       if (constant._ === name) {

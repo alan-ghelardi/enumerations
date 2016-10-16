@@ -1,6 +1,4 @@
-import {AssertionError} from 'assert'
 import chai from 'chai'
-import Enum from '../src/enum'
 import ArithmeticOperation from '../examples/arithmetic-operation'
 import CardinalDirection from '../examples/cardinal-direction'
 import EmployeeType from '../examples/employee-type'
@@ -13,28 +11,6 @@ const {BLUE, RED, YELLOW} = PrimaryColor
 const {SALES_SUPERVISOR, SALES_PERSON, SHOP_ASSISTANT} = EmployeeType
 
 describe('.values(constants...)', () => {
-
-  describe('when called on an initialized enum', () => {
-
-    it('throws an AssertionError', () => {
-      expect( () => {
-        PrimaryColor.values('GREEN', 'VIOLET')
-      }).to .throw(AssertionError, 'The constants of enum PrimaryColor have already been created')
-    })
-
-  })
-
-  describe('when the parameter `constants` is omited', () => {
-  
-    it('throws an AssertionError', () => {
-      class UnitializedEnum extends Enum {}
-  
-      expect( () => {
-        UnitializedEnum.values()
-      }).to .throw(AssertionError, 'The parameter `constants` is required for creating the enum UnitializedEnum')
-    })
-
-  })
 
   describe('when called with an array of strings', () => {
 
@@ -57,14 +33,6 @@ describe('.values(constants...)', () => {
   })  
 
   describe('when a list of objects is passed as parameter', () => {
-
-    it('throws an AssertionError if the one of these objects contains more than one field', () => {
-      class InvalidEnum extends Enum {}
-
-      expect( () => {
-        InvalidEnum.values({FOO: {}, BAR: {}}, {BAZ: {}})
-      }).to .throw (AssertionError)
-    })
 
     it('creates all expected constants', () => {
       expect(ArithmeticOperation) .to .have .property ('SUM')
@@ -89,18 +57,6 @@ describe('.values(constants...)', () => {
       expect(DIVISION.apply(a, b)) .to .be .equal (3)
     })
 
-    it('doesn\'t allow that the fields _, name, type and ordinal are overriden', () => {
-      class AnotherInvalidEnum extends Enum {}
-
-      AnotherInvalidEnum.values({
-        FOO: { name: 'BAR', type: 'AnythingElse', ordinal: 1, _: true }
-      })
-
-      expect(AnotherInvalidEnum.FOO._) .to .be .equal ('FOO')
-      expect(AnotherInvalidEnum.FOO.name) .to .be .equal ('FOO')
-      expect(AnotherInvalidEnum.FOO.type) .to .be .equal ('AnotherInvalidEnum')
-      expect(AnotherInvalidEnum.FOO.ordinal) .to .be .equal (0)
-    })
   })
   
   describe('when one wants to override a method and call the super within it', () => {
