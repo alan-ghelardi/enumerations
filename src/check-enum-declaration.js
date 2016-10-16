@@ -1,3 +1,9 @@
+/*!
+ * enumerations
+ * Copyright(c) 2016 Alan Ghelardi
+ * MIT Licensed
+ */
+
 import assert from 'assert'
 
 const finalProperties = new Set(['name', 'type', 'ordinal', '_', 'isConstantOf', 'isSameTypeAs', 'valueOf'])

@@ -1,3 +1,9 @@
+/*!
+ * enumerations
+ * Copyright(c) 2016 Alan Ghelardi
+ * MIT Licensed
+ */
+
 import checkEnumDeclaration from './check-enum-declaration'
 
 export default (enumClass, constants) => {

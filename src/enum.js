@@ -1,3 +1,9 @@
+/*!
+ * enumerations
+ * Copyright(c) 2016 Alan Ghelardi
+ * MIT Licensed
+ */
+
 import assert from 'assert'
 import makeEnum from './make-enum'
 
