@@ -16,6 +16,16 @@ object in the following form:
 
 describe('.values(constants...)', () => {
 
+  describe('when called on the class Enum', () => {
+    
+    it('throws an AssertionError', () => {
+      expect(() => {
+        Enum.values('FOO', 'BAR')
+      }).to .throw(AssertionError, 'The method .values() must be used only in subclasses of Enum')
+    })
+    
+  })
+  
   describe('when called on an initialized enum', () => {
 
     it('throws an AssertionError', () => {

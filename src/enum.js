@@ -92,6 +92,7 @@ class Enum {
   }
 
   static values(...constants) {
+    assert(this.name !== 'Enum', 'The method .values() must be used only in subclasses of Enum')
     assert(!Object.isFrozen(this), `The constants of enum ${this.name} have already been created`)
     assert(constants.length, `The parameter \`constants\` is mandatory for creating the enum ${this.name}`)
     makeEnum(this, constants)
