@@ -12,7 +12,8 @@
     "compile": "babel src -d lib",
     "docs": "jsdoc2md -f src/enum.js > docs/enum.md",
     "test": "mocha --compilers js:babel-register --reporter spec test",
-    "test-ci": "nyc mocha test"
+    "test-cov": "nyc mocha test",
+    "test-ci" : "npm run test-cov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
     "babel-preset-node6": "^11.0.0",
     "babel-register": "^6.16.3",
     "chai": "^3.5.0",
+    "coveralls": "^2.11.14",
     "eslint": "^3.7.0",
     "inquirer": "^1.2.1",
     "jsdoc-to-markdown": "^2.0.0",
