@@ -2,6 +2,10 @@
 
 A JavaScript implementation of the Type-Safe Enumeration Design Pattern.
 
+[![NPM Version]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Test Coverage][coveralls-image]][coveralls-url]
+
 This lightweight library takes the Java implementation of enums as an inspiration for leveraging fully functional enumerations, with support for customized properties and methods, immutability, error checking, etc.
 
 ## Installation
@@ -128,3 +132,9 @@ Check out the `examples/`folder for more details. Additionally, take a look on t
 Copyright (c) 2016 Alan Ghelardi.
 
 Licensed under the MIT license.
+
+[npm-url]: https://www.npmjs.com/package/enumerations
+[travis-image]: https://travis-ci.org/alan-ghelardi/enumerations.svg?branch=master
+[travis-url]: https://travis-ci.org/alan-ghelardi/enumerations
+[coveralls-image]:https://coveralls.io/repos/github/alan-ghelardi/enumerations/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/alan-ghelardi/enumerations?branch=master
