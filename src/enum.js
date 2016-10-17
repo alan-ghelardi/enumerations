@@ -163,6 +163,21 @@ class Enum {
   }
 
   /**
+   * Returns an array containing all declared constants of this enum type.
+   * 
+   * @return {array} Array with all constants that bellong to this enum.
+   */
+  static all() {
+    const constants = []
+    
+    for (let constant of this) {
+      constants.push(constant)
+    }
+
+    return constants
+  }
+  
+  /**
    * Makes this enum class iterable by returning a generator.
    * 
    * @returns {object} A object that implements the Generator interface.
