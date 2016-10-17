@@ -1,6 +1,7 @@
 /* eslint no-console: "off" */
-import inquirer from 'inquirer'
-import ArithmeticOperation from './arithmetic-operation'
+require('babel-register')
+const inquirer = require('inquirer')
+const {default: ArithmeticOperation} = require('./arithmetic-operation')
 
 console.log('***Calculator Example***')
 
