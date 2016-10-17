@@ -2,7 +2,7 @@
 
 A JavaScript implementation of the Type-Safe Enumeration Design Pattern.
 
-[![NPM Version]][npm-url]
+[![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
 
@@ -133,6 +133,7 @@ Copyright (c) 2016 Alan Ghelardi.
 
 Licensed under the MIT license.
 
+[npm-image]: https://img.shields.io/badge/enumerations-stable-brightgreen.svg
 [npm-url]: https://www.npmjs.com/package/enumerations
 [travis-image]: https://travis-ci.org/alan-ghelardi/enumerations.svg?branch=master
 [travis-url]: https://travis-ci.org/alan-ghelardi/enumerations
