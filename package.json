@@ -1,6 +1,6 @@
 {
   "name": "enumerations",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Type-Safe enums in JavaScript with custom properties and methods, immutability support, error checking, etc.",
   "main": "lib/enum.js",
   "engines": {
@@ -13,7 +13,7 @@
     "docs": "jsdoc2md -f src/enum.js > docs/enum.md",
     "test": "mocha --compilers js:babel-register --reporter spec test",
     "test-cov": "nyc mocha test",
-    "test-ci" : "npm run test-cov | coveralls"
+    "test-ci": "npm run test-cov | coveralls"
   },
   "repository": {
     "type": "git",
